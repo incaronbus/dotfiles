@@ -1,0 +1,27 @@
+Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
+, bgColor = "black"
+, fgColor = "grey"
+, position = Top
+, lowerOnStart = True
+, commands = [ Run Weather "KSJC" ["-t","WEATHER: <tempC>C (<tempF>F), <skyCondition>","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
+             , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
+             , Run Cpu ["-p", "2", "-L","3","-H","50","--normal","green","--high","red"] 10
+             , Run Memory ["-p", "2", "-t","Mem: <usedratio>%"] 10
+             , Run Swap ["-p", "2"] 10
+             , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+             , Run Battery [
+                "-t", "<acstatus>: <left>% / <timeleft>",
+                "--",
+                "-p", "green",
+                "-c", "energy_full",
+                "-O", "Charging",
+                "-o", "Battery",
+                "-h", "green",
+                "-l", "red"
+             ] 30
+             , Run Wireless "wlan0" ["-t", "<essid> <quality>%"] 60
+             ]
+, sepChar = "%"
+, alignSep = "}{"
+, template = "%cpu% | %memory% * %swap% | %wlan0wi% | %battery% }{ %KSJC% | <fc=#ee9a00>%date%</fc>"
+}
