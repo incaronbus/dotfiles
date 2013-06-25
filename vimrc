@@ -14,8 +14,10 @@ set laststatus=2             " display the status bar as another line
 nnoremap <CR> o
 
 "" Allow deleting selection without updating the clipboard
-vnoremap x "_dl
-vnoremap X "_dh
+vnoremap X "_dl
+vnoremap x "_dh
+nnoremap X "_dl
+nnoremap x "_dh
 
 "" Space and backspace while in normal mode
 nnoremap <Space> i<Space><Right><Esc>
