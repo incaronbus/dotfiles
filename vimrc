@@ -18,6 +18,8 @@ set nocompatible             " turn off compatibility mode
 
 "" [[[ LOOKS ]]]
     syntax on
+    colorscheme desert
+
     set number                   " show line numbers
 
     set showmode                 " show which mode you're in
@@ -136,7 +138,6 @@ set nocompatible             " turn off compatibility mode
 
 "" [[[ GVIM ]]]
 if has("gui_running")
-    colo desert
     set guioptions-=T
     set guifont=consolas:h10
     
